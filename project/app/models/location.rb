@@ -1,3 +1,3 @@
 class Location < ActiveRecord::Base
-	belongs_to :tour
+	has_many :tours
 end

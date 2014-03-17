@@ -1,0 +1,29 @@
+<h1>Listing webusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Ip</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @webusers.each do |webuser| %>
+      <tr>
+        <td><%= webuser.user_id %></td>
+        <td><%= webuser.ip %></td>
+        <td><%= link_to 'Show', webuser %></td>
+        <td><%= link_to 'Edit', edit_webuser_path(webuser) %></td>
+        <td><%= link_to 'Destroy', webuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Webuser', new_webuser_path %>

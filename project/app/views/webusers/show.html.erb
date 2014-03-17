@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @webuser.user_id %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @webuser.ip %>
+</p>
+
+<%= link_to 'Edit', edit_webuser_path(@webuser) %> |
+<%= link_to 'Back', webusers_path %>

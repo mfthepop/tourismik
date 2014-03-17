@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309190405) do
+ActiveRecord::Schema.define(version: 20140311073944) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 20140309190405) do
     t.integer  "purchase_id"
     t.integer  "ammount"
     t.date     "date_of_purchase"
-    t.integer  "num_of_reservatrion"
+    t.integer  "num_of_reservations"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "ragisterd_users", force: true do |t|
+  create_table "registered_users", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140309190405) do
   create_table "tours", force: true do |t|
     t.integer  "tour_id"
     t.date     "departure"
-    t.integer  "qourum"
+    t.integer  "quorum"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20140309190405) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "web_users", force: true do |t|
+  create_table "webusers", force: true do |t|
     t.integer  "user_id"
     t.string   "ip"
     t.datetime "created_at"

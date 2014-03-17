@@ -1,15 +1,15 @@
 UserReady::Application.routes.draw do
-  resources :web_users
-
-  resources :ragisterd_users
-
-  resources :purchases
-
   resources :locations
 
   resources :tours
 
   resources :profiles
+
+  resources :purchases
+
+  resources :registered_users
+
+  resources :webusers
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

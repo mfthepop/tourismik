@@ -2,10 +2,10 @@
 
 one:
   tour_id: 1
-  departure: 2014-03-09
-  qourum: 1
+  departure: 2014-03-11
+  quorum: 1
 
 two:
   tour_id: 1
-  departure: 2014-03-09
-  qourum: 1
+  departure: 2014-03-11
+  quorum: 1

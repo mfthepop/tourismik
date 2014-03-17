@@ -3,11 +3,11 @@
 one:
   purchase_id: 1
   ammount: 1
-  date_of_purchase: 2014-03-09
-  num_of_reservatrion: 1
+  date_of_purchase: 2014-03-11
+  num_of_reservations: 1
 
 two:
   purchase_id: 1
   ammount: 1
-  date_of_purchase: 2014-03-09
-  num_of_reservatrion: 1
+  date_of_purchase: 2014-03-11
+  num_of_reservations: 1

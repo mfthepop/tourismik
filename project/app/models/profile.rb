@@ -1,7 +1,4 @@
 class Profile < ActiveRecord::Base
-	belongs_to :ragisterd_user
+	belongs_to :webusers
 	has_many :tours
-	has_many :purchases
-	
-	
 end

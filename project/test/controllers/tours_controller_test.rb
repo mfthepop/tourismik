@@ -18,7 +18,7 @@ class ToursControllerTest < ActionController::TestCase
 
   test "should create tour" do
     assert_difference('Tour.count') do
-      post :create, tour: { departure: @tour.departure, qourum: @tour.qourum, tour_id: @tour.tour_id }
+      post :create, tour: { departure: @tour.departure, quorum: @tour.quorum, tour_id: @tour.tour_id }
     end
 
     assert_redirected_to tour_path(assigns(:tour))
@@ -35,7 +35,7 @@ class ToursControllerTest < ActionController::TestCase
   end
 
   test "should update tour" do
-    patch :update, id: @tour, tour: { departure: @tour.departure, qourum: @tour.qourum, tour_id: @tour.tour_id }
+    patch :update, id: @tour, tour: { departure: @tour.departure, quorum: @tour.quorum, tour_id: @tour.tour_id }
     assert_redirected_to tour_path(assigns(:tour))
   end
 
