@@ -1,0 +1,27 @@
+<h1>Listing ragisterd_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ragisterd_users.each do |ragisterd_user| %>
+      <tr>
+        <td><%= ragisterd_user.name %></td>
+        <td><%= link_to 'Show', ragisterd_user %></td>
+        <td><%= link_to 'Edit', edit_ragisterd_user_path(ragisterd_user) %></td>
+        <td><%= link_to 'Destroy', ragisterd_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ragisterd user', new_ragisterd_user_path %>

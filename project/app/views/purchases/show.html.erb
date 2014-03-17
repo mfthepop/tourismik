@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Purchase:</strong>
+  <%= @purchase.purchase_id %>
+</p>
+
+<p>
+  <strong>Ammount:</strong>
+  <%= @purchase.ammount %>
+</p>
+
+<p>
+  <strong>Date of purchase:</strong>
+  <%= @purchase.date_of_purchase %>
+</p>
+
+<p>
+  <strong>Num of reservatrion:</strong>
+  <%= @purchase.num_of_reservatrion %>
+</p>
+
+<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<%= link_to 'Back', purchases_path %>
