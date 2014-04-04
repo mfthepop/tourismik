@@ -1,10 +1,11 @@
 Store::Application.routes.draw do
+  devise_for :users
   get "home/index"
   get "home/about"
   get "home/contact"
   resources :products
 
-  root 'home#index'
+  root :to => 'home#index'
 
   #get demo index
   match ':controller(/:action(/:id))', :via => [:get, :post]

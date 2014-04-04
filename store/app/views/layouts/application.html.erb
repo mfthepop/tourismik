@@ -11,6 +11,8 @@
   </head>
 
   <body>
+	
+
   <nav class="top-bar" data-topbar>
 	<ul class="title-area">
 		<li class="name">
@@ -63,8 +65,15 @@
 	</div>
 	<div class="small-7 columns">
 		<ul class="right button-group">
-			<li><a href="#" class="button">عضویت</a></li>
-			<li><a href="#" class="button" data-reveal-id="login-menu">ورود</a></li>
+			<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => "button" %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "button"  %>
+	<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => "button" %> |
+  <%= link_to "Login", new_user_session_path, :class => "button"  %>
+<% end %>
+			
 		</ul>
 	</div>
 </div>
@@ -72,7 +81,10 @@
 <!--Login & Sign up-->
 
 
+
+
 <div id="login-menu" class="reveal-modal" data-reveal>
+	
 	<a class="close-reveal-modal" style="display: block; float: left;">&#215;</a>
 	<fieldset>
 		<legend>
@@ -104,6 +116,12 @@
 		</div>
 	</fieldset>
 
+</div>
+<div class="row" >
+<div class="large-12 columns" >	   
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+</div>
 </div>
 <!-- End Header and Nav -->
 	<div class="row">
