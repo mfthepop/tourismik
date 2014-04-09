@@ -21,7 +21,7 @@ $text-direction: rtl !default;
 //Calender//
 
 #calender {
-  height: 300px;
+//  height: 300px;
   text-align: center;
   table-layout: fixed;
   margin: 0 auto;
@@ -105,7 +105,7 @@ footer {
 }
 
 $tabBorder: 1px solid #ccc;
-.tabs {
+#writers .tabs {
 
   dd {
     border-bottom: $tabBorder;
@@ -113,7 +113,7 @@ $tabBorder: 1px solid #ccc;
     &:first-child {
       border-left: 0;
     }
-    width: 50%;
+
     &.active {
       border-bottom-color: white !important;
     }
@@ -128,7 +128,7 @@ $tabBorder: 1px solid #ccc;
 
 }
 
-.tabs-content {
+#writers .tabs-content {
   border-bottom: $tabBorder;
   border-right: $tabBorder;
   border-left: $tabBorder;
@@ -139,6 +139,41 @@ $tabBorder: 1px solid #ccc;
     width: 100%;
     float: right;
   }
+
+  dd {
+    width: 50%;
+  }
+
 }
+
+.tabs {
+  dd:last-child {
+    border-right: $tabBorder;
+  }
+
+  a {
+    border-top: $tabBorder;
+    border-left: $tabBorder;
+  }
+
+}
+
+#location-grid ul {
+  list-style-type: none;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+//.three-columns div {
+//  position: relative;
+//  p {
+//    position: absolute;
+//    bottom: 0;
+//    clear: both;
+//  }
+//}
+
 
 

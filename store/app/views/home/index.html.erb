@@ -18,15 +18,15 @@
         </li>
         <li><%= image_tag "banners/3.jpg" %>
 
-          <div class="orbit-caption">CAPTion</div>
+          <div class="orbit-caption">به لیدر های مان تور به مکان های جدید پیشنهاد دهید</div>
         </li>
         <li><%= image_tag "banners/4.jpg" %>
 
-          <div class="orbit-caption">CAPTion</div>
+          <div class="orbit-caption">به لیدر های مان تور به مکان های جدید پیشنهاد دهید</div>
         </li>
         <li><%= image_tag "banners/5.jpg" %>
 
-          <div class="orbit-caption">CAPTion</div>
+          <div class="orbit-caption">به لیدر های مان تور به مکان های جدید پیشنهاد دهید</div>
         </li>
       </ul>
     </div>
@@ -76,10 +76,10 @@
 
 <!-- Three-up Content Blocks -->
 
-<div class="row">
-  <div class="large-4 columns">
-    <img src="img/template/400x300textimg.gif">
-    <h4>This is a content section.</h4>
+<div class="row three-columns" data-equalizer>
+  <div class="large-4 columns panel" data-equalizer-watch>
+    <%= image_tag "misc/1.jpg" %>
+    <h4>محتوا</h4>
 
     <p> در اینترنت معنایی شده اند. بچه شاید رن اودوت، کارشناس امنیت از تتری برروی کار تعداد زیادی از این نرم سبز که
       تحقیق حتی کرده و طراح میزان از امنیت این نرم را در ارزیابی ابزارهایشان زراحی سایت کرده است. این نقاط ضعف این
@@ -87,9 +87,9 @@
       به حمله کرد. </p>
   </div>
 
-  <div class="large-4 columns">
-    <img src="img/template/400x300textimg.gif">
-    <h4>This is a content section.</h4>
+  <div class="large-4 columns panel" data-equalizer-watch>
+    <%= image_tag "misc/2.jpg" %>
+    <h4>محتوا</h4>
 
     <p> در اینترنت معنایی شده اند. بچه شاید رن اودوت، کارشناس امنیت از تتری برروی کار تعداد زیادی از این نرم سبز که
       تحقیق حتی کرده و طراح میزان از امنیت این نرم را در ارزیابی ابزارهایشان زراحی سایت کرده است. این نقاط ضعف این
@@ -97,9 +97,9 @@
       به حمله کرد. </p>
   </div>
 
-  <div class="large-4 columns">
-    <img src="img/template/400x300textimg.gif">
-    <h4>This is a content section.</h4>
+  <div class="large-4 columns panel" data-equalizer-watch>
+    <%= image_tag "misc/3.jpg" %>
+    <h4>محتوا</h4>
 
     <p> در اینترنت معنایی شده اند. بچه شاید رن اودوت، کارشناس امنیت از تتری برروی کار تعداد زیادی از این نرم سبز که
       تحقیق حتی کرده و طراح میزان از امنیت این نرم را در ارزیابی ابزارهایشان زراحی سایت کرده است. این نقاط ضعف این
@@ -111,76 +111,72 @@
 
 
 <!--calender & newsletter-->
-<div class="row">
-  <div class="large-6 columns">
-    <div class="panel callout">
-      <h3>فروردین</h3>
-      <table id="calender">
-        <tr>
-          <th>شنبه</th>
-          <th>یک شنبه</th>
-          <th>دو شنبه</th>
-          <th>سه شنبه</th>
-          <th>چهار شنبه</th>
-          <th>پنج شنبه</th>
-          <th>جمعه</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td class="date-canceled">11</td>
-          <td>12</td>
-          <td>13</td>
-          <td>14</td>
-        </tr>
-        <tr>
-          <td class="date-signed-up">15</td>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td>21
-        </tr>
-        </tr>
-        <tr>
-          <td>22</td>
-          <td class="date-upcoming">23</td>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-          <td>27</td>
-          <td>28</td>
-        </tr>
-        <tr>
-          <td>29</td>
-          <td>30</td>
-          <td>31</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-    </div>
+<div class="row" data-equalizer>
+  <div class="large-6 columns panel callout" data-equalizer-watch>
+    <h3>فروردین</h3>
+    <table id="calender">
+      <tr>
+        <th>شنبه</th>
+        <th>یک شنبه</th>
+        <th>دو شنبه</th>
+        <th>سه شنبه</th>
+        <th>چهار شنبه</th>
+        <th>پنج شنبه</th>
+        <th>جمعه</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td class="date-canceled">11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td class="date-signed-up">15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21
+      </tr>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td class="date-upcoming">23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   </div>
-  <div class="large-6 colums">
-    <div class="panel callout">
-      <h3>خبرنامه</h3>
+  <div class="large-6 columns panel callout" data-equalizer-watch>
+    <h3>خبرنامه</h3>
 
-      <div id="news">
+    <div id="news">
 
-      </div>
     </div>
   </div>
 

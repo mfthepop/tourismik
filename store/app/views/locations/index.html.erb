@@ -1,0 +1,33 @@
+<h1>مکان ها</h1>
+
+<%= link_to 'New Location', new_location_path, class: "button success small" %>
+
+<div class="row">
+  <div class="large-12 columns">
+    <ul class="small-block-grid-3 centered" id="location-grid">
+      <% @locations.each do |location| %>
+          <li>
+            <%= link_to location.avatar.url(:small), class: 'th radius' do
+              image_tag(location.avatar.url)
+            end
+            %>
+            <ul>
+              <li><h4><%= location.name %></h4></li>
+              <li><%= location.province %></li>
+            </ul>
+            <ul class="button-group even-3">
+
+              <li><%= link_to 'خذف', location, method: :delete, data: {confirm: 'Are you sure?'}, class: "button tiny secondary" %></li>
+              <li><%= link_to 'ویرایش', edit_location_path(location), class: "button tiny secondary" %></li>
+              <li><%= link_to 'نمایش', location, class: "button tiny secondary" %></li>
+            </ul>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+<br>
+
+

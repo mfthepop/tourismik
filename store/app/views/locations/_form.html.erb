@@ -1,0 +1,56 @@
+<%= form_for @location, :url => locations_path, :html => {:multipart => true} do |f| %>
+    <% if @location.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+          <ul>
+            <% @location.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row collapse">
+      <div class="small-9 large-10 columns">
+        <%= f.text_field :name %>
+      </div>
+      <div class="small-3 large-2 columns">
+        <span class="postfix">نام</span>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-9 large-10 columns">
+        <%= f.text_field :province %>
+      </div>
+      <div class="small-3 large-2 columns">
+        <span class="postfix">مکان</span>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-9 large-10 columns">
+        <%= f.text_field :description %>
+      </div>
+      <div class="small-3 large-2 columns">
+        <span class="postfix">توضیحات</span>
+      </div>
+    </div>
+
+
+
+    <div class="row collapse">
+      <div class="small-3 large-2 columns">
+        <a class="button postfix">...browse</a>
+      </div>
+      <div class="small-6 large-8 columns">
+        <%= f.file_field :avatar%>
+      </div>
+      <div class="small-3 large-2 columns">
+        <span class="postfix">انتخاب عکس</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class: 'button success small '%>
+    </div>
+<% end %>

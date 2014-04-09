@@ -46,7 +46,7 @@ function populate_news(n)
 	news.html('');
 	for (var i =0; i<n; i++)
 	{
-		news.append('<p>news...<a class="button secondary tiny left">read more >></a></p><hr/>');
+		news.append('<p>news...<a class="button secondary tiny left">بیشتر بخوانید >></a></p><hr/>');
 	}
 
 }

@@ -1,11 +1,21 @@
 Store::Application.routes.draw do
+  resources :purchases
+
   devise_for :users
+  resources :pictures
+
+  resources :profiles
+
+  resources :locations
+
+  resources :tours
+
   get "home/index"
   get "home/about"
   get "home/contact"
   resources :products
 
-  root :to => 'home#index'
+  root 'home#index'
 
   #get demo index
   match ':controller(/:action(/:id))', :via => [:get, :post]

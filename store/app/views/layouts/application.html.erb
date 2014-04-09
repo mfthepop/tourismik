@@ -1,159 +1,142 @@
 <html class="no-js" lang="fa" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-	
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#"></a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">منو</a></li>
+  </ul>
 
-  <nav class="top-bar" data-topbar>
-	<ul class="title-area">
-		<li class="name">
-			<h1><a href="#"></a></h1>
-		</li>
-		<li class="toggle-topbar menu-icon"><a href="#">منو</a></li>
-	</ul>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">‌Browse</a>
+        <ul class="dropdown">
+          <li><%= link_to 'تورها', controller: 'tours' %></li>
+          <li><%= link_to 'کاربران', controller: 'profiles' %></li>
+          <li><%= link_to 'مکان ها', controller: 'locations' %></li>
+        </ul>
+      </li>
+      <li><%= link_to 'درباره ما', controller: 'home', action: 'about'%></li>
+      <li><%= link_to 'تماس با ما', controller: 'home', action: 'contact' %></li>
+      <li><%= link_to 'خانه', controller: 'home'%></li>
+    </ul>
 
-	<section class="top-bar-section">
-		<!-- Right Nav Section -->
-		<ul class="right">
-			<li class="has-dropdown">
-				<a href="#">‌Browse</a>
-				<ul class="dropdown">
-					<li><a href="#">تورها</a></li>
-					<li><a href="#">کاربران</a></li>
-					<li><a href="#">مکان ها</a></li>
-				</ul>
-			</li>
-			<li><a href="#">درباره ما</a></li>
-			<li><a href="#">تماس با ما</a></li>
-			<li class="active"><a href="#">خانه</a></li>
-		</ul>
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="has-form">
+        <div class="row collapse" id="search-box">
+          <div class=" small-4  columns">
+            <a href="#" class="tiny alert  button ">برو</a>
+          </div>
+          <div class=" small-8  columns">
+            <input type="search" style="width: 100%" placeholder="جست و جو">
+          </div>
 
-		<!-- Left Nav Section -->
-		<ul class="left">
-			<li class="has-form">
-				<div class="row collapse" id="search-box">
-					<div class=" small-8  columns">
-						<input type="search" style="width: 100%" placeholder="جست و جو">
-					</div>
-					<div class=" small-4  columns">
-						<!--<a href="#" class="alert button">برو</a>-->
-						<a href="#" class="tiny alert  button split">برو
-							<span data-dropdown="drop"></span></a><br>
-						<ul id="drop" class="f-dropdown" data-dropdown-content>
-							<li><a href="#">کاربران</a></li>
-							<li><a href="#">تورها</a></li>
-							<li><a href="#">مکان ها</a></li>
-							<li><a href="#">همه چیز</a></li>
-						</ul>
-					</div>
-				</div>
-		</ul>
-	</section>
+        </div>
+    </ul>
+  </section>
 </nav>
 <div class="row">
-	<div class="small-5 columns">
-		<h1><%= image_tag "template/400x100textLogo.gif" %></h1>
-	</div>
-	<div class="small-7 columns">
-		<ul class="right button-group">
-			<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => "button" %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "button"  %>
-	<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => "button" %> |
-  <%= link_to "Login", new_user_session_path, :class => "button"  %>
-<% end %>
-			
-		</ul>
-	</div>
+  <div class="small-5 columns">
+    <h1><%= image_tag "misc/logo.gif" %></h1>
+  </div>
+  <div class="small-7 columns">
+    <div class="button-bar">
+      <ul class="right button-group">
+        <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => "button" %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "button" %>
+        <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => "button" %>
+            <%= link_to "Login", new_user_session_path, :class => "button" %>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!--Login & Sign up-->
 
 
-
-
 <div id="login-menu" class="reveal-modal" data-reveal>
-	
-	<a class="close-reveal-modal" style="display: block; float: left;">&#215;</a>
-	<fieldset>
-		<legend>
-			Login:
-		</legend>
-		<div class="row collapse">
-			<div class="small-9 large-10 columns">
-				<input type="text" placeholder="نام کاربری" name="name" maxlength="100">
-			</div>
-			<div class="small-3 large-2 columns">
-				<span class="postfix">@</span>
-			</div>
-		</div>
-		<div class="row collapse">
-			<div class="small-9 large-10 columns">
-				<input type="password" name="password" placeholder="رمز عبور" maxlength="100" required="required">
-			</div>
-			<div class="small-3 large-2 columns">
-				<span class="postfix">?</span>
-			</div>
-		</div>
-		<div class="row collapse">
-			<div class="large-12 columns">
-				<ul class="button-group right">
-					<li><a href="#" class="button alert">انصراف</a></li>
-					<li><a href="#" class="button success">ورود</a></li>
-				</ul>
-			</div>
-		</div>
-	</fieldset>
+  <a class="close-reveal-modal" style="display: block; float: left;">&#215;</a>
+  <fieldset>
+    <legend>
+      Login:
+    </legend>
+    <div class="row collapse">
+      <div class="small-9 large-10 columns">
+        <input type="text" placeholder="نام کاربری" name="name" maxlength="100">
+      </div>
+      <div class="small-3 large-2 columns">
+        <span class="postfix">@</span>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-9 large-10 columns">
+        <input type="password" name="password" placeholder="رمز عبور" maxlength="100" required="required">
+      </div>
+      <div class="small-3 large-2 columns">
+        <span class="postfix">?</span>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="large-12 columns">
+        <ul class="button-group right">
+          <li><a href="#" class="button success">ورود</a></li>
+        </ul>
+      </div>
+    </div>
+  </fieldset>
 
-</div>
-<div class="row" >
-<div class="large-12 columns" >	   
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-</div>
 </div>
 <!-- End Header and Nav -->
-	<div class="row">
-		<div class="large-12 columns">
-		<%= yield %>
-		</div>
+<div class="row">
+  <div class="large-12 columns">
+    <%= yield %>
+  </div>
 
-	</div>
-	
-	
-	<!-- Footer -->
+</div>
+
+
+<!-- Footer -->
 
 <footer class="row">
-	<div class="large-12 columns">
-		<hr>
-		<div class="row">
-			<div class="large-6 columns">
-				<p>©Copyright<br/> University of Tehran Spring 93 Internet Engineering Course</p>
-			</div>
-			<div class="large-6 columns">
-				<ul class="inline-list right" id="legal">
-					<li><a href="#">Privacy Policy</a></li>
-					<li>|</li>
-					<li><a href="#">Legal</a></li>
-					<li>|</li>
-					<li><a href="#">Copyright</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+  <div class="large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>no ©Copyright<br/> University of Tehran Spring 93 Internet Engineering Course</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right" id="legal">
+          <li><a href="#">Privacy Policy</a></li>
+          <li>|</li>
+          <li><a href="#">Legal</a></li>
+          <li>|</li>
+          <li><a href="#">Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </footer>
-    
-    <%= javascript_include_tag "application" %>
-  </body>
+
+<%= javascript_include_tag "application" %>
+</body>
 </html>

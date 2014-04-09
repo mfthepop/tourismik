@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'foundation-rails'
-
-gem 'devise'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -37,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'foundation-rails', '~> 5.2.2.0'
+gem 'paperclip', '~> 4.1.1'
+gem 'devise', '~> 3.2.4'
+#gem 'cocaine', '0.3.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

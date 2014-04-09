@@ -1,0 +1,59 @@
+<dl class="tabs"  data-tab>
+  <dd class="active"><a href="#panel2-1">توضیحات</a></dd>
+  <dd><a href="#panel2-2">تورها</a></dd>
+  <dd><a href="#panel2-3">گالری</a></dd>
+</dl>
+<div  class="tabs-content">
+  <div class="content active" id="panel2-1">
+    <div class="row>">
+      <div class="small-4 columns">
+
+        <%= link_to @location.avatar.url(:medium), class: 'th radius' do
+          image_tag(@location.avatar.url)
+        end
+        %>
+      </div>
+      <div class="small-8 columns">
+        <p id="notice"><%= notice %></p>
+
+        <p>
+          <strong>Name:</strong>
+          <%= @location.name %>
+        </p>
+
+        <p>
+          <strong>Province:</strong>
+          <%= @location.province %>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= @location.description %>
+        </p>
+        <ul class="button-group right">
+          <li><%= link_to 'Edit', edit_location_path(@location), class: 'button secondary' %></li>
+          <li><%= link_to 'Back', locations_path, class: 'button secondary' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content" id="panel2-2"><p>Second panel content goes here...</p></div>
+  <div class="content" id="panel2-3"><p>Third panel content goes here...</p></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

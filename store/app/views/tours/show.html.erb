@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departure date:</strong>
+  <%= @tour.departure_date %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @tour.departure_time %>
+</p>
+
+<p>
+  <strong>Departure location:</strong>
+  <%= @tour.departure_location %>
+</p>
+
+<p>
+  <strong>Quorum:</strong>
+  <%= @tour.quorum %>
+</p>
+
+<p>
+  <strong>Registered:</strong>
+  <%= @tour.registered %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>
