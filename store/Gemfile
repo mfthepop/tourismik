@@ -48,3 +48,6 @@ gem 'icomoon-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#search and co
+gem 'will_paginate', '~> 3.0.5'

@@ -1,11 +1,24 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
+   helper_method :sort_column, :sort_direction  
 
   # GET /tours
   # GET /tours.json
-  def index
-    @tours = Tour.all
-  end
+  
+   #def index
+  #  @tours = Tour.all
+  #end
+ 
+
+	def index
+		@tours = Tour.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
+	end
+
+    #def index  
+     # @tours = Tour.order(params[:sort])  
+    #end  
+ 
+
 
   # GET /tours/1
   # GET /tours/1.json
@@ -69,6 +82,13 @@ class ToursController < ApplicationController
   end
 
   private
+    def sort_column  
+      Tour.column_names.include?(params[:sort]) ? params[:sort] : "quorum"  
+    end   
+    
+	def sort_direction  
+		%w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"  
+	end 
     # Use callbacks to share common setup or constraints between actions.
     def set_tour
       @tour = Tour.find(params[:id])
