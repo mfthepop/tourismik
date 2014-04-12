@@ -10,9 +10,13 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
+ *
  *= require_tree .
- *= custom
+ *= require font.css.scss
  */
+
+* {
+	font-family: 'yekan';
+}
 
 
