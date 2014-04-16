@@ -27,11 +27,14 @@
     <%= f.label :quorum %><br>
     <%= f.number_field :quorum %>
   </div>
-  <div class="field">
+<!--  <div class="field">
     <%= f.label :registered %><br>
     <%= f.number_field :registered %>
-  </div>
+  </div>-->
   <div class="actions">
-    <%= f.submit %>
+    <%= hidden_field_tag :parent_id, params[:parent_id]%>
+    <%= f.submit  %>
   </div>
+
+
 <% end %>

@@ -12,11 +12,9 @@
  *= require foundation_and_overrides
  *
  *= require_tree .
- *= require font.css.scss
+ *= require icomoon-free/style
  */
 
-* {
-	font-family: 'yekan';
-}
+
 
 

@@ -2,6 +2,7 @@
   <dd class="active"><a href="#panel2-1">توضیحات</a></dd>
   <dd><a href="#panel2-2">تورها</a></dd>
   <dd><a href="#panel2-3">گالری</a></dd>
+  <dd><a href="#panel2-4">reviews</a></dd>
 </dl>
 <div  class="tabs-content">
   <div class="content active" id="panel2-1">
@@ -33,6 +34,7 @@
         <ul class="button-group right">
           <li><%= link_to 'Edit', edit_location_path(@location), class: 'button secondary' %></li>
           <li><%= link_to 'Back', locations_path, class: 'button secondary' %></li>
+          <li><%= link_to 'Create Tour', new_tour_path( parent_id: @location.id), class: 'button success' %></li>
         </ul>
       </div>
     </div>

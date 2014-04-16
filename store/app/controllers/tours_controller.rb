@@ -15,6 +15,8 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
+    #@tour.location = Location.find params[:parent_id]
+
   end
 
   # GET /tours/1/edit
@@ -24,7 +26,12 @@ class ToursController < ApplicationController
   # POST /tours
   # POST /tours.json
   def create
-    @tour = Tour.new(tour_params)
+    #@tour = Tour.new(tour_params)
+    #@tour = @parent.tours.new(tour_params)
+
+	  @location = Location.find(params[:parent_id])
+	  @tour = @location.tours.create(tour_params)
+
 
     respond_to do |format|
       if @tour.save
