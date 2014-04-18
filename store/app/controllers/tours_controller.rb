@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
-   helper_method :sort_column, :sort_direction  
+  helper_method :sort_column, :sort_direction  
 
   # GET /tours
   # GET /tours.json
