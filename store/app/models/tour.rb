@@ -1,8 +1,10 @@
 class Tour < ActiveRecord::Base
 	belongs_to :location
-	has_many :users
+	has_and_belongs_to_many :users
 	has_many :reviews, as: :reviewable
 	has_many :purchases
+
+	after_initialize :init
 	
 	def self.search(search)
     if search
@@ -10,7 +12,11 @@ class Tour < ActiveRecord::Base
     else
       scoped
     end
-  end
+	end
+
+	def init
+		self.registered = 0
+	end
 
 
 end

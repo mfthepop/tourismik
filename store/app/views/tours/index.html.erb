@@ -15,19 +15,29 @@
 
 <table class="pretty">  
   <tr> 
-    <th><%= sortable "departure_date", "Departure date"   %></th>  
-    <th><%= sortable "departure_time", "Departure time"   %></th>  
-    <th><%= sortable "departure_location", "Departure location" %></th>
-    <th><%= sortable "quorum", "Quorum"   %></th> 
-    <th><%= sortable  "registered", "Registered" %></th> 
+    <th><%= sortable 'departure_date', 'تاریخ رفت' %></th>
+    <th><%= sortable 'departure_time', 'زمان رفت' %></th>
+    <th><%= sortable 'departure_location', 'آدرس' %></th>
+    <th>مقصد</th>
+    <th><%= sortable 'quorum', 'ظرفیت' %></th>
+    <th><%= sortable  'registered', 'افراد ثبت نام کرده' %></th>
+    <th><%= sortable 'price', 'قیمت' %></th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>  
   <% for tour in @tours %>  
   <tr>  
     <td><%= tour.departure_date.strftime("%B %e, %Y") %></td>  
 	<td><%= tour.departure_time %></td>
 	<td><%= tour.departure_location %></td>
+    <td><%= tour.location.name %></td>
 	<td><%= tour.quorum %></td>
 	<td><%= tour.registered %></td>
+    <td><%= tour.price %></td>
+    <td><%= link_to 'Show', tour %></td>
+    <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+    <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>  
   <% end %>  
 </table>  

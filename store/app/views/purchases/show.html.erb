@@ -6,8 +6,18 @@
 </p>
 
 <p>
+  <strong>tour id</strong>
+  <%= @purchase.tour_id %>
+</p>
+
+<p>
+  <strong>username</strong>
+  <%= @purchase.profile_id %>
+</p>
+
+<p>
   <strong>Price:</strong>
-  <%= @purchase.price %>
+  <%= @purchase.tour.price *  @purchase.number_of_reservations %>
 </p>
 
 <%= link_to 'Edit', edit_purchase_path(@purchase) %> |

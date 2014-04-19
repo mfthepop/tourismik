@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
 	has_one :profile
 	has_many :reviews
 	has_many :comments
-	has_many :tours
+  has_and_belongs_to_many :tours
 
 end

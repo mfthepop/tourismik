@@ -24,7 +24,9 @@ class PurchasesController < ApplicationController
   # POST /purchases
   # POST /purchases.json
   def create
-    @purchase = Purchase.new(purchase_params)
+		@tour = Tour.find params[:tour_id]
+    @purchase = @tour.purchases.new(purchase_params)
+		@purchase.profile_id = Profile.find_by_user_id current_user.id
 
     respond_to do |format|
       if @purchase.save

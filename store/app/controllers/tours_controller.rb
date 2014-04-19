@@ -28,7 +28,7 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
-    #@tour.location = Location.find params[:parent_id]
+
 
   end
 
@@ -42,7 +42,7 @@ class ToursController < ApplicationController
     #@tour = Tour.new(tour_params)
     #@tour = @parent.tours.new(tour_params)
 
-	  @location = Location.find(params[:parent_id])
+	  @location = Location.find(params[:location_id])
 	  @tour = @location.tours.create(tour_params)
 
 
@@ -96,6 +96,6 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:departure_date, :departure_time, :departure_location, :quorum, :registered)
+      params.require(:tour).permit(:departure_date, :departure_time, :departure_location, :quorum, :registered, :price)
     end
 end

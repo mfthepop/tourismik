@@ -34,7 +34,7 @@
         <ul class="button-group right">
           <li><%= link_to 'Edit', edit_location_path(@location), class: 'button secondary' %></li>
           <li><%= link_to 'Back', locations_path, class: 'button secondary' %></li>
-          <li><%= link_to 'Create Tour', new_tour_path( parent_id: @location.id), class: 'button success' %></li>
+          <li><%= link_to 'Create Tour', new_tour_path( location_id: @location.id), class: 'button success' %></li>
         </ul>
       </div>
     </div>

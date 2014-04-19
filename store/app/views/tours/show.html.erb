@@ -1,34 +1,94 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Departure date:</strong>
-  <%= @tour.departure_date %>
-</p>
 
-<p>
-  <strong>Departure time:</strong>
-  <%= @tour.departure_time %>
-</p>
+<dl class="tabs"  data-tab>
+  <dd class="active"><a href="#panel2-1">توضیحات</a></dd>
+  <dd><a href="#panel2-2">اعضا</a></dd>
+  <dd><a href="#panel2-3">گالری</a></dd>
+  <dd><a href="#panel2-4">reviews</a></dd>
+</dl>
+<div  class="tabs-content">
+  <div class="content active" id="panel2-1">
+    <div class="row>">
+      <div class="small-4 columns panel" id="location-grid">
 
-<p>
-  <strong>Tour ID</strong>
-  <%= @tour.location.id %>
-</p>
+        <%= link_to @tour.location.avatar.url(:medium), class: 'th radius' do
+          image_tag(@tour.location.avatar.url)
+        end
+        %>
+        <ul>
+          <li><h4><%= @tour.location.name %></h4></li>
+          <li><%= @tour.location.province %></li>
+        </ul>
 
-<p>
-  <strong>Departure location:</strong>
-  <%= @tour.departure_location %>
-</p>
+      </div>
+      <div class="small-8 columns">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Quorum:</strong>
-  <%= @tour.quorum %>
-</p>
+        <p>
+          <strong>تاریخ رفت</strong>
+          <%= @tour.departure_date %>
+        </p>
 
-<p>
-  <strong>Registered:</strong>
-  <%= @tour.registered %>
-</p>
+        <p>
+          <strong>زمان رفت</strong>
+          <%= @tour.departure_time %>
+        </p>
 
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
-<%= link_to 'Back', tours_path %>
+        <p>
+          <strong>price</strong>
+          <%= @tour.price %>
+        </p>
+
+        <p>
+          <strong>مقصد</strong>
+          <%= @tour.location.name %>
+        </p>
+
+        <p>
+          <strong>آدرس</strong>
+          <%= @tour.departure_location %>
+        </p>
+
+        <p>
+          <strong>ظرفیت</strong>
+          <%= @tour.quorum %>
+        </p>
+
+        <p>
+          <strong>افراد ثبت نام کرده</strong>
+          <%= @tour.registered %>
+        </p>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <ul class="button-group right">
+          <li><%= link_to 'Edit', edit_tour_path(@tour), class: 'button secondary' %></li>
+          <li><%= link_to 'Back', tours_path, class: 'button secondary' %></li>
+          <li><%= link_to 'Reserve Tour', new_purchase_path( tour_id: @tour.id), class: 'button success' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content" id="panel2-2"><p>Second panel content goes here...</p></div>
+  <div class="content" id="panel2-3"><p>Third panel content goes here...</p></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

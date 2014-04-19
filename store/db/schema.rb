@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415152530) do
+ActiveRecord::Schema.define(version: 20140419095826) do
 
   create_table "comments", force: true do |t|
     t.string   "detail"
@@ -53,14 +53,21 @@ ActiveRecord::Schema.define(version: 20140415152530) do
     t.date     "date_of_birth"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "purchases", force: true do |t|
     t.integer  "number_of_reservations"
-    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tour_id"
+    t.integer  "profile_id"
   end
+
+  add_index "purchases", ["profile_id"], name: "index_purchases_on_profile_id"
+  add_index "purchases", ["tour_id"], name: "index_purchases_on_tour_id"
 
   create_table "reviews", force: true do |t|
     t.decimal  "score"
@@ -78,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140415152530) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "location_id"
+    t.integer  "price"
   end
 
   create_table "users", force: true do |t|
