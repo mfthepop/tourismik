@@ -8,7 +8,9 @@ class Tour < ActiveRecord::Base
 	
 	def self.search(search)
     if search
-      where('quorum LIKE ?', "%#{search}%")
+      #where('departure_location LIKE ?', "%#{search}%")
+      where("departure_time LIKE ? OR departure_location like ?", "%#{search}%","%#{search}%")
+      # where('departure_time LIKE ?', "%#{search}%")
     else
       scoped
     end

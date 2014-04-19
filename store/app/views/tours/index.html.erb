@@ -1,16 +1,15 @@
 <h1>Listing tours</h1>
 
-
-<%= form_tag tours_path, :method => 'get' do %>
-  <%= hidden_field_tag :direction, params[:direction] %>
-  <%= hidden_field_tag :sort, params[:sort] %>
+<%= form_tag tours_path, :method => 'get', :id => "tours_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
+  <div id="tours"><%= render 'tours' %></div>
 <% end %>
 
 
+<<<<<<< HEAD
 
 
 <table class="pretty">  
@@ -45,5 +44,7 @@
 <%= will_paginate @tours %>
 
 <br>
+=======
+>>>>>>> branch 'master' of https://github.com/mfthepop/tourismik.git
 
 <%= link_to 'New Tour', new_tour_path, class: 'button success' %>
