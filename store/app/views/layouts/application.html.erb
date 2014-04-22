@@ -63,7 +63,7 @@
                 <%= link_to 'تغییر پروفایل', edit_user_registration_path, :class => "button" %>
                 <strong> <%= current_user.profile.first_name %></strong> Logged in as
             <% else %>
-                <%= link_to 'ساخت پروفایل', new_user_registration_path, :class => "button" %>
+                <%= link_to 'ساخت پروفایل', new_profile_path, :class => "button" %>
                 <span>Logged in as</span>
                 <strong> <%= current_user.email %></strong>
 

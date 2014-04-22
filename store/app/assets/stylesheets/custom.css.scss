@@ -1,3 +1,7 @@
+@import "foundation/functions";
+@include exports("global") {}
+@import "foundation/components/global";
+
 $text-direction: rtl !default;
 .my-vertical-button-bar {
   list-style-type: none;
@@ -150,7 +154,6 @@ $tabBorder: 1px solid #ccc;
   dd:last-child {
     border-right: $tabBorder;
   }
-
   a {
     border-top: $tabBorder;
     border-left: $tabBorder;
@@ -180,7 +183,17 @@ $tabBorder: 1px solid #ccc;
   margin-right: 15px;
 
   th {
-//    background-color: $secondary-color; //#e7e7e7;;
+    background-color: $secondary-color; //#e7e7e7;;
+    }
+
+  tr {
+    &:hover {
+      background-color: lighten($primary-color, 20%);
+  }
+    .button-group {
+      position: relative;
+      button: 0;
+    }
   }
 }
 
