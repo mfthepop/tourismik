@@ -1,12 +1,10 @@
-
-
-<dl class="tabs"  data-tab>
+<dl class="tabs" data-tab>
   <dd class="active"><a href="#panel2-1">توضیحات</a></dd>
   <dd><a href="#panel2-2">اعضا</a></dd>
   <dd><a href="#panel2-3">گالری</a></dd>
   <dd><a href="#panel2-4">reviews</a></dd>
 </dl>
-<div  class="tabs-content">
+<div class="tabs-content">
   <div class="content active" id="panel2-1">
     <div class="row>">
       <div class="small-4 columns panel" id="location-grid">
@@ -56,7 +54,7 @@
 
         <p>
           <strong>افراد ثبت نام کرده</strong>
-          <%= @tour.registered %>
+          <%= @tour.users.count %>
         </p>
 
 
@@ -67,12 +65,14 @@
         <ul class="button-group right">
           <li><%= link_to 'Edit', edit_tour_path(@tour), class: 'button secondary' %></li>
           <li><%= link_to 'Back', tours_path, class: 'button secondary' %></li>
-          <li><%= link_to 'Reserve Tour', new_purchase_path( tour_id: @tour.id), class: 'button success' %></li>
+          <li><%= link_to 'Reserve Tour', new_booking_path(tour_id: @tour.id), class: 'button success' %></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="content" id="panel2-2"><p>Second panel content goes here...</p></div>
+  <div class="content" id="panel2-2">
+    <p>Second panel content goes here...</p>
+  </div>
   <div class="content" id="panel2-3"><p>Third panel content goes here...</p></div>
 </div>
 

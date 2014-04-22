@@ -7,8 +7,9 @@
     <ul class="small-block-grid-3 centered" id="location-grid">
       <% @locations.each do |location| %>
           <li>
-            <%= link_to location.avatar.url(:small), class: 'th radius' do
+            <%= link_to location, class: 'th radius' do
               image_tag(location.avatar.url)
+
             end
             %>
             <ul>

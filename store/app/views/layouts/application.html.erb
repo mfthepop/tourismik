@@ -9,30 +9,8 @@
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
-<style>
-			img.bg {
-			/* Set rules to fill background */
-			min-height: 100%;
-			min-width: 1024px;
-			
-			/* Set up proportionate scaling */
-			width: 100%;
-			height: auto;
-			
-			/* Set up positioning */
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
-		
-		@media screen and (max-width: 1024px){
-			img.bg {
-				left: 50%;
-				margin-left: -512px; }
-		}
-</style>
+
 <body>
-	<%= image_tag "bg.png", class:'bg' %>
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
@@ -45,11 +23,11 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
-        <a href="#">‌Browse</a>
+        <a href="#">‌گشت</a>
         <ul class="dropdown">
-          <li><%= link_to 'تورها', controller: 'tours' %></li>
-          <li><%= link_to 'کاربران', controller: 'profiles' %></li>
-          <li><%= link_to 'مکان ها', controller: 'locations' %></li>
+          <li><%= link_to 'تورها', tours_path %></li>
+          <li><%= link_to 'کاربران', profiles_path %></li>
+          <li><%= link_to 'مکان ها', locations_path %></li>
         </ul>
       </li>
       <li><%= link_to 'درباره ما', controller: 'home', action: 'about'%></li>
@@ -62,7 +40,7 @@
       <li class="has-form">
         <div class="row collapse" id="search-box">
           <div class=" small-4  columns">
-            <a href="#" class="tiny alert  button ">برو</a>
+            <a href="#" class="tiny alert  button expand">برو</a>
           </div>
           <div class=" small-8  columns">
             <input type="search" style="width: 100%" placeholder="جست و جو">
@@ -80,12 +58,12 @@
     <div class="button-bar">
       <ul class="right button-group">
         <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.email %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => "button" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "button" %>
+            <strong><%= current_user.profile.first_name %></strong> Logged in as
+            <%= link_to 'تغییر پروفایل', edit_user_registration_path, :class => "button" %>
+            <%= link_to "خروج", destroy_user_session_path, method: :delete, :class => "button" %>
         <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => "button" %>
-            <%= link_to "Login", new_user_session_path, :class => "button" %>
+            <%= link_to "عضویت", new_user_registration_path, :class => "button" %>
+            <%= link_to "ورود", new_user_session_path, :class => "button" %>
         <% end %>
 
       </ul>

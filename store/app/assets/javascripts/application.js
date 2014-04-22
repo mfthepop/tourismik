@@ -17,18 +17,3 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-$(function () {
-  // Sorting and pagination links.
-  $('#tours th a, #tours .pagination a').live('click', 
-    function () {
-      $.getScript(this.href);
-      return false;
-    }
-  );
-  
-  // Search form.
-  $('#tours_search').submit(function () {
-    $.get(this.action, $(this).serialize(), null, 'script');
-    return false;
-  });
-});

@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
-  helper_method :sort_column, :sort_direction  
+   helper_method :sort_column, :sort_direction  
 
   # GET /tours
   # GET /tours.json
@@ -96,6 +96,6 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:departure_date, :departure_time, :departure_location, :quorum, :registered, :price)
+      params.require(:tour).permit(:departure_date, :departure_time, :departure_location, :quorum, :price)
     end
 end

@@ -1,42 +1,42 @@
 <h1>Listing tours</h1>
 
-<%= form_tag tours_path, :method => 'get', :id => "tours_search" do %>
+
+<%= form_tag tours_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], style: 'width: 300px;', placeholder: 'جست و جو' %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-  <div id="tours"><%= render 'tours' %></div>
 <% end %>
 
-
-<<<<<<< HEAD
 
 
 <table class="pretty">  
   <tr> 
     <th><%= sortable 'departure_date', 'تاریخ رفت' %></th>
     <th><%= sortable 'departure_time', 'زمان رفت' %></th>
-    <th><%= sortable 'departure_location', 'آدرس' %></th>
     <th>مقصد</th>
     <th><%= sortable 'quorum', 'ظرفیت' %></th>
-    <th><%= sortable  'registered', 'افراد ثبت نام کرده' %></th>
+    <th>افراد ثبت نام کرده'</th>
     <th><%= sortable 'price', 'قیمت' %></th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>  
   <% for tour in @tours %>  
   <tr>  
-    <td><%= tour.departure_date.strftime("%B %e, %Y") %></td>  
+    <td><%= tour.departure_date.strftime("%B %e, %Y") %></td>
 	<td><%= tour.departure_time %></td>
-	<td><%= tour.departure_location %></td>
-    <td><%= tour.location.name %></td>
+    <td><%= link_to tour.location.name, tour.location %></td>
 	<td><%= tour.quorum %></td>
-	<td><%= tour.registered %></td>
+	<td><%= tour.users.count %></td>
     <td><%= tour.price %></td>
-    <td><%= link_to 'Show', tour %></td>
-    <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-    <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+    <ul class="button-group">
+    <li><%= link_to 'Show', tour, class: 'button secondary tiny' %></li>
+    <li><%= link_to 'Edit', edit_tour_path(tour), class: 'button secondary tiny' %></li>
+    <li><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button secondary tiny' %></li>
+    </ul>
+    </td>
   </tr>  
   <% end %>  
 </table>  
@@ -44,7 +44,5 @@
 <%= will_paginate @tours %>
 
 <br>
-=======
->>>>>>> branch 'master' of https://github.com/mfthepop/tourismik.git
 
 <%= link_to 'New Tour', new_tour_path, class: 'button success' %>

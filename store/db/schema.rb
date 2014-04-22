@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419095826) do
+ActiveRecord::Schema.define(version: 20140420074419) do
+
+  create_table "bookings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookings", ["user_id", "tour_id"], name: "index_bookings_on_user_id_and_tour_id"
 
   create_table "comments", force: true do |t|
     t.string   "detail"
@@ -81,7 +90,6 @@ ActiveRecord::Schema.define(version: 20140419095826) do
     t.time     "departure_time"
     t.string   "departure_location"
     t.integer  "quorum"
-    t.integer  "registered"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "location_id"
