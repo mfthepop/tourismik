@@ -58,9 +58,17 @@
     <div class="button-bar">
       <ul class="right button-group">
         <% if user_signed_in? %>
-            <strong><%= current_user.profile.first_name %></strong> Logged in as
-            <%= link_to 'تغییر پروفایل', edit_user_registration_path, :class => "button" %>
             <%= link_to "خروج", destroy_user_session_path, method: :delete, :class => "button" %>
+            <% if current_user.profile %>
+                <%= link_to 'تغییر پروفایل', edit_user_registration_path, :class => "button" %>
+                <strong> <%= current_user.profile.first_name %></strong> Logged in as
+            <% else %>
+                <%= link_to 'ساخت پروفایل', new_user_registration_path, :class => "button" %>
+                <span>Logged in as</span>
+                <strong> <%= current_user.email %></strong>
+
+            <% end %>
+
         <% else %>
             <%= link_to "عضویت", new_user_registration_path, :class => "button" %>
             <%= link_to "ورود", new_user_session_path, :class => "button" %>

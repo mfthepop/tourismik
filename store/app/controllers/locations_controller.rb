@@ -67,6 +67,17 @@ class LocationsController < ApplicationController
       @location = Location.find(params[:id])
     end
 
+  private
+  #def sort_column
+	 # Tour.column_names.include?(params[:sort]) ? params[:sort] : "quorum"
+  #end
+  #
+  #def sort_direction
+	 # %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  #end
+    # Use callbacks to share common setup or constraints between actions.
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
       params.require(:location).permit(:name, :province, :description, :avatar)

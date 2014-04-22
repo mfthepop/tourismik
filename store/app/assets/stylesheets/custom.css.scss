@@ -156,6 +156,18 @@ $tabBorder: 1px solid #ccc;
     border-left: $tabBorder;
   }
 
+//  position: relative;
+//  .button-group {
+//    position: relative;
+//    bottom: 0;
+//  }
+
+}
+
+.tabs-content {
+  clear: right;
+  border: $tabBorder;
+  min-height: 300px;
 }
 
 #location-grid ul {
@@ -164,9 +176,13 @@ $tabBorder: 1px solid #ccc;
   margin: auto;
 }
 
+.pretty {
+  margin-right: 15px;
 
-
-
+  th {
+//    background-color: $secondary-color; //#e7e7e7;;
+  }
+}
 
 
 

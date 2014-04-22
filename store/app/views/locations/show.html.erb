@@ -1,10 +1,10 @@
-<dl class="tabs"  data-tab>
+<dl class="tabs right"  data-tab>
   <dd class="active"><a href="#panel2-1">توضیحات</a></dd>
   <dd><a href="#panel2-2">تورها</a></dd>
   <dd><a href="#panel2-3">گالری</a></dd>
   <dd><a href="#panel2-4">reviews</a></dd>
 </dl>
-<div  class="tabs-content">
+<div  class="tabs-content" >
   <div class="content active" id="panel2-1">
     <div class="row>">
       <div class="small-4 columns">
@@ -39,7 +39,39 @@
       </div>
     </div>
   </div>
-  <div class="content" id="panel2-2"><p>Second panel content goes here...</p></div>
+  <div class="content" id="panel2-2">
+    <p>تور های موجود برای این مکان...</p>
+
+    <table class="pretty" >
+      <tr>
+        <th><%= 'تاریخ رفت' %></th>
+        <th><%= 'زمان رفت' %></th>
+        <th><%=  'ظرفیت' %></th>
+        <th>افراد ثبت نام کرده'</th>
+        <th><%=  'قیمت' %></th>
+        <th></th>
+      </tr>
+      <% for tour in @location.tours %>
+          <tr>
+            <td><%= tour.departure_date.strftime("%B %e, %Y") %></td>
+            <td><%= tour.departure_time %></td>
+            <td><%= tour.quorum %></td>
+            <td><%= tour.users.count %></td>
+            <td><%= tour.price %></td>
+            <td>
+              <ul class="button-group">
+                <li><%= link_to 'Show', tour, class: 'button secondary tiny' %></li>
+                <li><%= link_to 'Edit', edit_tour_path(tour), class: 'button secondary tiny' %></li>
+                <li><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button secondary tiny' %></li>
+              </ul>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+
+
+
+  </div>
   <div class="content" id="panel2-3"><p>Third panel content goes here...</p></div>
 </div>
 
